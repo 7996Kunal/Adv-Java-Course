@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var x;
+            function f1()
+            {
+                s=document.getElementById("t1").value;
+                x=new XMLHttpRequest();
+                x.onreadystatechange=f2;
+                x.open("GET","p3.jsp?id="+s,true);
+                x.send(null);
+            }
+            function f2()
+            {
+                if(x.readyState==4 && x.status==200)
+                {
+                    s=x.responseText.trim();
+                    if(s!="NO")
+                    {
+                        arr=s.split("#");
+                        document.getElementById("t2").value=arr[1];
+                        document.getElementById("t3").value=arr[2];
+                        document.getElementById("t4").value=arr[3];
+                        document.getElementById("t5").value=arr[4];
+                        document.getElementById("t6").value=arr[5];
+                        document.getElementById("t7").value=arr[6];
+                    }
+                    else
+                    {
+                         document.getElementById("t2").value="";
+                        document.getElementById("t3").value="";
+                        document.getElementById("t4").value="";
+                        document.getElementById("t5").value="";
+                        document.getElementById("t6").value="";
+                        document.getElementById("t7").value="";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="t1" onBlur="f1()"><br>
+        <input type="text" id="t2"><br>
+        <input type="text" id="t3"><br>
+        <input type="text" id="t4"><br>
+        <input type="text" id="t5"><br>
+        <input type="text" id="t6"><br>
+        <input type="text" id="t7"><br>
+    </body>
+</html>

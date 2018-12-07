@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function f2()
+            {
+                a1=document.getElementById("t1");
+                d=new Date();
+                a1.value=d;                
+            }
+            function f1()
+            {
+                setInterval("f2()",1000);
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="t1" size="40"><br><br>
+        <input type="button" onClick="f1()" value="Start" >
+    </body>
+</html>

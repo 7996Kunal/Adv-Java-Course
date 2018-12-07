@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function f1()
+            {
+                //a1=document.getElementById("t1");
+                //a1.size=30;
+                
+                //a1=document.getElementById("t2");
+                //a1.type='text';
+                
+                //a1=document.getElementById("t3");
+                //a1.type='date';
+                
+                a1=document.getElementById("t4");
+                a1.width=400;
+                a1.src="b12.jpg";
+            }
+            function f2()
+            {
+                a=document.getElementById("t5");
+                a.src="b12.jpg";
+            }
+            function f3()
+            {
+                a=document.getElementById("t5");
+                a.src="b10.jpg";
+            }
+             function f4()
+            {
+                a=document.getElementById("t5");
+                a.src="b13.jpg";
+            }
+             function f5()
+            {
+                a=document.getElementById("t5");
+                a.src="b12.jpg";
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" name="t1" id="t1"><br><br>
+        <input type="password" name="t2" id="t2"><br><br>
+        <input type="text" name="t3" id="t3"><br><br>
+        <img src="b10.jpg" id="t4"><br><br>
+        <input type="button" value="Click Here" onclick="f1()" >
+        
+        <br><br><br><br>
+        <img src="b10.jpg" id="t5" onMouseOver="f2()" onMouseOut="f3()" onmousedown="f4()" onmouseup="f5()">
+    </body>
+</html>

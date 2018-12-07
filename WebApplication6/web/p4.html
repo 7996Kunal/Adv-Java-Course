@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function f1()
+            {
+                a1=document.getElementById("t1");
+                a2=document.getElementById("t2");
+                a3=document.getElementById("t3");
+                a4=document.getElementById("t4");
+                a5=document.getElementById("t5");
+                a6=document.getElementById("t6");
+                if(a1.value=="")
+                {
+                    window.alert("Name is Compulsory!!");
+                    a1.focus();
+                    return false;
+                }
+                s1=a2.value;
+                s2=a3.value;
+                if(s1.length<8 || s1!=s2)
+                {
+                    alert("Min Password length is 8.\n Both Password must be same");
+                    a2.focus();
+                    return false;
+                }
+                s3=a4.value;
+                if(s3.length!=10)
+                {
+                    alert("Invalid Mobile Numbers!!!");
+                    a4.focus();
+                    return false;
+                }
+                else
+                {
+                    for(i=0;i<10;i++)
+                    {
+                        ch=s3.substring(i,i+1);
+                        if(ch<'0' || ch>'9')
+                        {
+                            alert("Only Digits");
+                            a4.focus();
+                            return false;
+                        }
+                    }
+                }
+                //----------------------
+                email=a5.value;
+                n=email.length;
+                at=email.indexOf("@");
+                dot=email.lastIndexOf(".");
+                if(n<10 || at<4 || dot-at<3 || n-dot<3)
+                {
+                    alert("Invalid Email!!!!!");
+                    a5.focus();
+                    return false;
+                }
+                //----------------------
+                return true;
+            }
+            function f2()
+            {
+                a1=document.getElementById("c1");
+                a2=document.getElementById("b1");
+                if(a1.checked)
+                    a2.disabled=false;
+                else
+                    a2.disabled=true;
+            }
+        </script>
+    </head>
+    <body>
+        <form method="post" action="p5.jsp">
+        <table>
+            <tr>
+                <td>Name:</td><td><input type="text" id="t1" name="t1"></td>
+            </tr>
+            <tr>
+                <td>Password:</td><td><input type="text" id="t2" name="t2"></td>
+            </tr>
+            <tr>
+                <td>Re-Enter:</td><td><input type="text" id="t3" name="t3"></td>
+            </tr>
+            <tr>
+                <td>Mobile:</td><td><input type="text" id="t4" name="t4"></td>
+            </tr>
+            <tr>
+                <td>Email:</td><td><input type="text" id="t5" name="t5"></td>
+            </tr>
+            <tr>
+                <td></td><td><input type="text" id="t6" name="t6"></td>
+            </tr>
+            <tr>
+                <td></td><td><input type="checkbox" id="c1" name="c1" onclick="f2()"> I Agrees</td>
+            </tr>
+            <tr>
+                <td></td><td><input type="submit" value="Submit" id="b1" name="b1" onclick=" return f1()" disabled></td>
+            </tr>
+        </table></form>
+    </body>
+</html>

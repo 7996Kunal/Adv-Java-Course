@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var xmlhttp;
+            function getCities()
+            {
+                s=document.getElementById("t1").value;
+                xmlhttp=new XMLHttpRequest();
+                xmlhttp.onreadystatechange=showCities;
+                xmlhttp.open("GET","p3.jsp?cty="+s,true);
+                xmlhttp.send(null);
+                document.getElementById("img1").src="pr.gif";
+            }
+            function showCities()
+            {
+                if(xmlhttp.status==200 && xmlhttp.readyState==4)
+                {
+                    document.getElementById("img1").src="";
+                    ans=xmlhttp.responseText.trim();
+                    document.getElementById("d1").innerHTML=ans;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        City: <input type="text" id="t1" name="t1" size="30" onkeyup="getCities()"><img src="" id="img1" width="20">
+        <hr>
+        <div id="d1"></div>
+    </body>
+</html>

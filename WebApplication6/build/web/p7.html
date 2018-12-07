@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function f1(aa)
+            {
+                a2=document.getElementById("t1");
+                a2.value=aa.value;
+            }
+        </script>
+    </head>
+    <body>
+        <select id="s1" onChange="f1(this)">
+            <option>Meerut</option>
+            <option>Delhi</option>
+            <option>Mumbai</option>
+            <option>Calcutta</option>
+            <option>Chennai</option>
+        </select><br>
+         <select id="s2" onChange="f1(this)">
+            <option>Meerut 1</option>
+            <option>Delhi 1</option>
+            <option>Mumbai 1</option>
+            <option>Calcutta 1</option>
+            <option>Chennai 1</option>
+         </select><br>
+         <input type="text" id="t1">
+    </body>
+</html>

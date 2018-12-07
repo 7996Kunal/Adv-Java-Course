@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var xmlhttp;
+            function checkUser()
+            {
+                s=document.getElementById("t1").value;
+                xmlhttp=new XMLHttpRequest();
+                xmlhttp.onreadystatechange=showStatus;
+                xmlhttp.open("GET","p10.jsp?id="+s,true);
+                xmlhttp.send(null);
+                document.getElementById("d1").innerHTML="<img src='pr.gif' height='20'>";
+            }
+            function showStatus()
+            {
+                if(xmlhttp.readyState==4 && xmlhttp.status==200)
+                {
+                    ans=xmlhttp.responseText.trim();
+                    if(ans=="Y")
+                    {
+                        document.getElementById("d1").innerHTML="<font color=red>User id exists!!!!</font>";
+                        document.getElementById("t1").focus();
+                    }
+                    else
+                    {
+                        document.getElementById("d1").innerHTML="";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <table align="center">
+            <tr><td>Login:</td><td><input type="text" id="t1" onblur="checkUser()"></td><td style="width:200px"><div id="d1"></div></td></tr>
+            <tr><td>Password:</td><td><input type="text" id="t2"></td><td></td></tr>
+            <tr><td>Type:</td><td><input type="text" id="t3"></td><td></td></tr>
+            <tr><td></td><td></td><td></td></tr>
+            <tr><td></td><td><input type="button" value="Insert"> &nbsp;&nbsp;&nbsp;<input type="button" value="Insert"></td><td></td></tr>
+        </table>
+    </body>
+</html>

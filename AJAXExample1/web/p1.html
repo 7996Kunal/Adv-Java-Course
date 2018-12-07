@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var x;
+            function f1()
+            {
+                x=new XMLHttpRequest();
+                x.onreadystatechange=f2;
+                x.open("GET","p1.jsp",true);
+                x.send(null);
+            }
+            function f2()
+            {
+                if(x.readyState==4 && x.status==200)
+                {
+                    s=x.responseText;
+                    document.getElementById("t1").value=s;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="t1"><br>
+        <input type="button" value="Click Here" onClick="f1()">
+    </body>
+</html>
